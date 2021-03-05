@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome!</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<script type="text/javascript">
+		function showHide(c)
+		{
+			if(c.value=="Assign Professor to a Course"){
+				document.getElementById("assign").style.visibility='visible';
+			}else{}
+		}
+	</script>
+</head>
+<body>
+	<div class="header" align="center">
+		<h1>Welcome!</h1>
+	</div>
+	<div class="container">
+		<table>
+			<tr>
+				<td>
+					<form action="SecretaryServlet" method="post">
+        			<input type="hidden" name="requestType" value="courses"/>
+        			<input class="button" type="submit" value="View Courses"/>
+    				</form>
+    			</td>
+				<td>
+					<form action="SecretaryServlet" method="post">
+        			<input type="hidden" name="requestType" value="profpercourse" />
+        			<input class="button" type="submit" value="View Courses and Professor per course" />
+    				</form>
+    			</td>
+				<td><input class="button" type="submit" value="Assign Professor to a Course" id="rb1" onclick="showHide(this)"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td>
+					<form style="visibility:hidden" id="assign" action="SecretaryServlet" method="post">
+					<input type="hidden" name="requestType" value="proftocourse"/><br>
+        			<input type="text" name="class" placeholder="Class"><br><br>
+        			<input type="text" name="pname" placeholder="Professor Name"><br><br>
+        			<input type="text" name="psurname" placeholder="Professor Surname"><br><br>
+        			<input type="submit" value="Submit" /><br><br>
+        			</form>
+        		</td>
+    		</tr>
+    		<tr><td colspan=3><a href="http://localhost:8080/Phase_4/Logout.jsp">Logout</a></td></tr>   
+		</table>   
+	</div>
+</body>
+</html>

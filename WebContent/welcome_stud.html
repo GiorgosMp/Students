@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<title>Welcome!</title>
+</head>
+<body>
+	<div class="header" align="center">
+		<h1>Welcome Student!</h1>
+	</div>
+	<div class="container">
+		<table>
+			<tr>
+				<td><form action="StudentServlet" method="post">
+        			<input type="hidden" name="requestType" value="score_courses" />
+        			<input class="button" type="submit" value="View Score per Course" />
+    				</form>
+				</td>
+				<td>
+					<form action="StudentServlet" method="post">
+        			<input type="hidden" name="requestType" value="score_semester" />
+        			<input class="button" type="submit" value="View Score per Semester" />
+    				</form>
+				</td>
+				<td>
+					<form action="StudentServlet" method="post">
+        			<input type="hidden" name="requestType" value="score" />
+        			<input class="button" type="submit" value="Total Score" />
+    				</form>
+    			</td>
+			</tr>
+			<tr><td colspan=3><a href="http://localhost:8080/Phase_4/Logout.jsp">Logout</a></td></tr>
+		</table>
+</div>
+</body>
+</html>

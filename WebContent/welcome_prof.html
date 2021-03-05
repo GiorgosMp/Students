@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome back Professor!</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<script type="text/javascript">
+		function showHide(c)
+		{
+			if(c.value=="Grading"){
+				document.getElementById("grade").style.visibility='visible';
+			}else{}
+		}
+	</script>
+</head>
+<body>
+	<div class="header" align="center"><h1>Welcome Professor!</h1></div>
+	<div class="container">
+	<table>
+		<tr>
+			<td>
+				<form action="ProfessorServlet" method="post">
+        		<input type="hidden" name="requestType" value="courses" />
+        		<input class="button" type="submit" value="View Graded Courses" />
+        		</form>
+        	</td>
+        	<td>
+        		<form action="ProfessorServlet" method="post">
+        		<input type="hidden" name="requestType" value="coursesnograde" />
+        		<input class="button" type="submit" value="View Courses with no Grade" />
+   				 </form>
+        	</td>
+        	<td><input class="button" type="submit" value="Grading" id="rb1" onclick="showHide(this)"/></td>
+    	</tr>
+    	<tr>
+    		<td></td>
+			<td></td>
+			<td>
+				<form style="visibility:hidden" id="grade" action="ProfessorServlet" method="post">
+        		<input type="hidden" name="requestType" value="grading" /><br>
+        		<input type="text" name="course" placeholder="Course"><br><br>
+        		<input type="text" name="name" placeholder="Student Name"><br><br>
+        		<input type="text" name="surname" placeholder="Student Surname"><br><br>
+        		<input type="text" name="grade" placeholder="Grade"><br><br>
+        		<input type="submit" value="Grading" /><br>
+    			</form>
+    		</td>
+    	</tr>
+    	<tr><td colspan=3><a href="http://localhost:8080/Phase_4/Logout.jsp">Logout</a></td></tr>
+    </table>
+    </div>
+	
+
+</body>
+</html>

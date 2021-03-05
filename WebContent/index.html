@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	<script type="text/javascript">
+		function showHide(c)
+		{
+			if(c.value=="Secretary"){
+				document.getElementById("scrt").style.visibility='visible';
+				document.getElementById("stdn").style.visibility='hidden';
+				document.getElementById("prf").style.visibility='hidden';
+		}
+			else if(c.value=="Student"){
+				document.getElementById("scrt").style.visibility='hidden';
+				document.getElementById("stdn").style.visibility='visible';
+				document.getElementById("prf").style.visibility='hidden';
+		}
+			else if(c.value=="Professor"){
+				document.getElementById("scrt").style.visibility='hidden';
+				document.getElementById("stdn").style.visibility='hidden';
+				document.getElementById("prf").style.visibility='visible';
+		}
+			else{}
+		}
+	</script>
+</head>
+<body>
+		<h1>Welcome to login page</h1>
+	</div>
+	<div class="container" >
+		<table>
+			<tr><th colspan=3 ><h4>Select your property and insert your username and password to access the system.</h4></th></tr>
+			<tr><td><input type="submit" class="button" name="property" value="Secretary" id="rb1" onclick="showHide(this)"/></td>
+		   		<td><input type="submit" class="button" name="property" value="Student" id="rb2" onclick="showHide(this)"/></td>
+		   		<td><input type="submit" class="button" name="property" value="Professor" id="rb3" onclick="showHide(this)"/></td>
+			</tr>
+			<tr>
+		   		<td>
+		   			<form style="visibility:hidden" id="scrt" action="SecretaryServlet" method="post">
+        			<input type="hidden" name="requestType" value="forlog"> 
+        			<input type="text" name="username" placeholder="Username"> <br><br>
+        			<input type="password" name="password" placeholder="Password"><br><br>
+        			<input type="submit" value="Login">
+    				</form>
+    			</td>
+      			<td>
+    				<form style="visibility:hidden" id="stdn" action="StudentServlet" method="post">
+        			<input type="hidden" name="requestType" value="forlog"> 
+        			<input type="text" name="username" placeholder="Username"> <br><br>
+        			<input type="password" name="password" placeholder="Password"><br><br>
+        			<input type="submit" value="Login">
+        			</form>
+        		</td>
+        		<td>
+        			<form style="visibility:hidden" id="prf" action="ProfessorServlet" method="post">
+        			<input type="hidden" name="requestType" value="forlog">
+        			<input type="text" name="username"  placeholder="Username"> <br><br>
+        			<input type="password" name="password" placeholder="Password"><br><br>
+        			<input type="submit" value="Login"><br><br>
+    				</form>
+    			</td>
+    		</tr>
+		</table>
+	</div>
+</body>
+</html>

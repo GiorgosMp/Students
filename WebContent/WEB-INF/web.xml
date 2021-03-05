@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Phase 4</display-name>
+  <servlet>
+    <description></description>
+    <display-name>SecretaryServlet</display-name>
+    <servlet-name>SecretaryServlet</servlet-name>
+    <servlet-class>SecretaryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecretaryServlet</servlet-name>
+    <url-pattern>/SecretaryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProfessorServlet</display-name>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <servlet-class>ProfessorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfessorServlet</servlet-name>
+    <url-pattern>/ProfessorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentServlet</display-name>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/StudentServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
